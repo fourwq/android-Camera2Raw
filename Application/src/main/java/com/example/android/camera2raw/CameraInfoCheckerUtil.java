@@ -1,5 +1,7 @@
 package com.example.android.camera2raw;
 
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.util.Range;
 import android.util.Size;
 
@@ -9,6 +11,15 @@ import java.util.Date;
 public class CameraInfoCheckerUtil {
     public CameraInfoCheckerUtil() {
     }
+
+    static <T> String objectArray2String(T[] array){
+        StringBuilder builder = new StringBuilder();
+        for (T item : array) {
+            builder.append(item.toString() + "  ");
+        }
+        return builder.toString();
+    }
+
 
     static String booleanArray2String(boolean[] booleanArray) {
         StringBuilder builder = new StringBuilder();
@@ -22,22 +33,6 @@ public class CameraInfoCheckerUtil {
         StringBuilder builder = new StringBuilder();
         for (float f : floatArray) {
             builder.append(f + "  ");
-        }
-        return builder.toString();
-    }
-
-    static String sizeArray2String(Size[] sizeArray) {
-        StringBuilder builder = new StringBuilder();
-        for (Size size : sizeArray) {
-            builder.append(size.toString() + "  ");
-        }
-        return builder.toString();
-    }
-
-    static String rangeArray2String(Range[] rangeArray) {
-        StringBuilder builder = new StringBuilder();
-        for (Range range : rangeArray) {
-            builder.append(range.toString() + "  ");
         }
         return builder.toString();
     }
